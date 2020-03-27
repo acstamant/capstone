@@ -3,16 +3,21 @@
 <html lang = "en">
 <head>
 	<meta charset ="utf-8">
-	<script src="https://d3js.org/d3.v2.min.js"></script>
-	<script src="https://github.com/acstamant/capstone/blob/master/counties.js"></script>
-
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://raw.githubusercontent.com/acstamant/capstone/master/counties.js" ></script> 
+	
 	<title> Anna Camille - Starbucks Time Series</title> 
 	<p>Timeseries of Starbucks Locations in the United States </p>
+
+	<style> 
+		
+	</style>
 </head>
+
 <body>
 
 	<script type = "text/javascript">
-		var width = 700; 
+		var width = 700; //width and height of graphic
 		var height = 580; 
 
 		var svg = d3.select('body') //creates the svg element 
@@ -22,13 +27,13 @@
 
 		var g = svg.append("g"); //appends to cvg
 
-		var projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]); 
+		var project = d3.geo.albers().scale(1300).translate([487.5, 305]); 
 
-		var path = d3.geoPath()
-			.projection(projection);
+		var path = d3.geo.path()
+			.projection(project);
 
 		g.selectAll("path")
-			.data(counties_json.features)
+			.data(counties.json)
 			.enter()
 			.append("path")
 			.attr("fill", "#ccc")
