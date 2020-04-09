@@ -3,13 +3,21 @@
 <html lang = "en">
 <head>
 	<script type ="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
 	<script src="counties.js"></script>
 	<meta charset ="utf-8">
 	<title> Anna Camille - Starbucks Time Series</title> 
+	<style>
+		path {
+			stroke: black;
+       		stroke-width: 0.5px;
+        	fill: white;
+		}
+	</style>
 </head>
 <body>
 	<script>
-		
+
 		//diminsions
 var width = 700; 
 var height = 580; 
@@ -32,9 +40,9 @@ g.selectAll("path")
 	.data(counties_json)
 	.enter()
 	.append("path")
-	.attr("fill", "#ccc")
-	.attr("stoke", "#333")
 	.attr("d", path);
+	
+
 	</script>
 </body>
 		
