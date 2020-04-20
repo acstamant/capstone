@@ -2,48 +2,38 @@
 
 <html lang = "en">
 <head>
-	<script type ="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+	<meta charset ="utf-8">
+	<title> Anna Camille - Starbucks Time Series</title> 
+
+	<script type ="text/javascript" src="d3.js"></script>
 	<script src="https://d3js.org/topojson.v2.min.js"></script>
 	<script src="counties.js"></script>
-	<meta charset ="utf-8">
+	<script src="starbucks.js"></script>
 	<title> Anna Camille - Starbucks Time Series</title> 
 	<style>
 		path {
-			stroke: black;
-       		stroke-width: 0.5px;
-        	fill: white;
+			stroke: green;
+       		stroke-width: 0.1px;
+        	fill: lightyellow;
+		}
+		.circles {
+			stroke: blue;
+			stroke-width:0.5px;
+			fill:red;
+		}
+		
+		h1 {
+			font: sans-serif;
+			color: green;
+		}	
+		circle{
+
 		}
 	</style>
 </head>
 <body>
-	<script>
-
-		//diminsions
-var width = 700; 
-var height = 580; 
-
-//creates the svg element 
-var svg = d3.select("body")
-	.append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var projection = d3.geoAlbersUsa()
-	.scale(1000)
-	.translate([width/2, height/2]);
-	//think of g like a circle, rect, etc
-var g = svg.append("g"); //appends an empty element to the SVG, contains geometr
-var path = d3.geoPath()
-	.projection(projection);
-
-g.selectAll("path")
-	.data(counties_json)
-	.enter()
-	.append("path")
-	.attr("d", path);
-	
-
-	</script>
+	<h1> Time Series of Starbucks in the United States </h1>
+	<script type="text/javascript" src="project_1.js"></script>
 </body>
 		
 </html>
