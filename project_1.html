@@ -3,36 +3,58 @@
 <html lang = "en">
 <head>
 	<meta charset ="utf-8">
-	<title> Anna Camille - Starbucks Time Series</title> 
+	<link rel="shortcut icon" href="favicon.ico">
 
 	<script type ="text/javascript" src="d3.js"></script>
 	<script src="https://d3js.org/topojson.v2.min.js"></script>
 	<script src="counties.js"></script>
-	<script src="starbucks.js"></script>
+
 	<title> Anna Camille - Starbucks Time Series</title> 
+
+	<div id ="slideContainer">
+		<input id="timeslide" type="range" min="0" max="363" value="0" step="1"/><br>
+		<span id="range">Month and Year</span>
+
 	<style>
 		path {
-			stroke: green;
+			stroke: white;
        		stroke-width: 0.1px;
-        	fill: lightyellow;
+        	fill: gray;
 		}
 		.circles {
-			stroke: blue;
+			stroke: yellow;
 			stroke-width:0.5px;
-			fill:red;
+			fill:steelblue;
 		}
-		
+		.incident {
+    		fill: steelblue;
+    		stroke:yellow;
+			}
+		.hover {
+   		 fill: yellow;   
+		}
+	
 		h1 {
 			font: sans-serif;
 			color: green;
-		}	
-		circle{
-
+			position:absolute;
+			left: 400px;
+			font-size: 2.5em;
+		}
+		h2 {
+			position:absolute;
+			font: sans-serif;
+			color: green;
+    		top: 60px;
+    		left: 600px;
+    		font-size: 2em;
 		}
 	</style>
+	
 </head>
 <body>
 	<h1> Time Series of Starbucks in the United States </h1>
+	<h2></h2>
 	<script type="text/javascript" src="project_1.js"></script>
 </body>
 		
