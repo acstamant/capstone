@@ -96,7 +96,7 @@ function doSomething(){
 		d3.select(this).attr("class","incident");
 		});
 
-	d3.select("#timeslife")
+	d3.select("#timeslide")
 		.on("input", function(){
 			update(+this.value); 
 		});
@@ -130,4 +130,5 @@ function initialDate(d,i){
 		return "#999";
 	};
 }
+
 };
