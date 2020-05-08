@@ -1,5 +1,7 @@
 
 var starbucks; 
+var inputVal = null; 
+
 var months = ["1/1990", "2/1990", "3/1990", "4/1990", "5/1990", "6/1990", "7/1990", "8/1990", "9/1990", "10/1990", "11/1990", "12/1990",
 				"1/1991", "2/1991", "3/1991", "4/1991", "5/1991", "6/1991", "7/1991", "8/1991", "9/1991", "10/1991", "11/1991", "12/1991",
 				"1/1992", "2/1992", "3/1992", "4/1992", "5/1992", "6/1992", "7/1992", "8/1992", "9/1992", "10/1992", "11/1992", "12/1992",
@@ -31,7 +33,7 @@ var months = ["1/1990", "2/1990", "3/1990", "4/1990", "5/1990", "6/1990", "7/199
 				"1/2018", "2/2018", "3/2018", "4/2018", "5/2018", "6/2018", "7/2018", "8/2018", "9/2018", "10/2018", "11/2018", "12/2018",
 				"1/2019", "2/2019", "3/2019", "4/2019", "5/2019", "6/2019", "7/2019", "8/2019", "9/2019", "10/2019", "11/2019", "12/2019",
 				"1/2020", "2/2020", "3/2020"
-]
+];
 
 
 
@@ -81,6 +83,7 @@ function doSomething(){
 	.data(starbucks)
 	.enter()
 	.append("circle")
+	.attr("fill", initialDate)
 	.attr("r",3)
 	.attr("class","circles")
 	.attr("transform", function(d) {return "translate(" + projection([d.Long,d.Lat]) + ")";})
@@ -93,4 +96,38 @@ function doSomething(){
 		d3.select(this).attr("class","incident");
 		});
 
+	d3.select("#timeslife")
+		.on("input", function(){
+			update(+this.value); 
+		});
+
+	function update(value){
+		document.getElementById("range")
+		.innerHTML=months[value];
+		inputVal = months[value];
+		d3.selectAll("incident")
+		.attr("fill", dateMatch);
+	}
+function dateMatch(data, value){
+	var d = new Date(data.Opened);
+	var m = months[d.getMonth()];
+	if(inputVal ==m ){
+		this.parentElement.appendChild(this);
+		return "red"; 
+	} else {
+		return "#999";
+	};
+}
+function initialDate(d,i){
+	var d = new Date(d.Opened);
+	var m = months[d.getMonth()];
+	if (m == "1/1990")
+	{
+		this.parentElement.appendChild(this);
+		return "red";
+	}
+	else{
+		return "#999";
+	};
+}
 };

@@ -11,43 +11,58 @@
 
 	<title> Anna Camille - Starbucks Time Series</title> 
 
-	<div id ="slideContainer">
+	<div id ="sliderContainer">
 		<input id="timeslide" type="range" min="0" max="363" value="0" step="1"/><br>
 		<span id="range">Month and Year</span>
+	</div>
 
 	<style>
 		path {
-			stroke: white;
-       		stroke-width: 0.1px;
-        	fill: gray;
+    		stroke: cadetblue;
+    		stroke-width: 1px;
+    		fill: slategray;
 		}
 		.circles {
 			stroke: yellow;
 			stroke-width:0.5px;
 			fill:steelblue;
 		}
-		.incident {
-    		fill: steelblue;
-    		stroke:yellow;
-			}
 		.hover {
    		 fill: yellow;   
 		}
+		.incident{
+			stroke:yellow;
+			fill:steelblue;
+		}
+
+		#sliderContainer {
+			position: relative;
+			top:500px;
+		}
 	
 		h1 {
-			font: sans-serif;
 			color: green;
-			position:absolute;
-			left: 400px;
-			font-size: 2.5em;
+    		position: absolute;
+    		border-left: double;
+    		border-left-color: steelblue;
+    		border-bottom: double;
+    		border-bottom-color: steelblue;
+    		border-top: ridge;
+    		border-top-color: steelblue;
+    		left: 400px;
+    		font-size: 2.5em;
+    		border-right: double;
+    		border-right-color: steelblue;
+    		text-align:center;
 		}
 		h2 {
 			position:absolute;
-			font: sans-serif;
+			font: cursive;
 			color: green;
-    		top: 60px;
-    		left: 600px;
+    		top: 100px;
+    		left: 650px;
     		font-size: 2em;
+    		text-align:center;
 		}
 	</style>
 	
