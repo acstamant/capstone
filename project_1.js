@@ -94,9 +94,7 @@ function doSomething()
     };
 }
 function initialDate(d,i){
-    var d = new Date(d.Year);
-    var m = years[d.getFullYear()];
-    if (m == "1990") {
+    if (inputValue == "1990") {
         this.parentElement.appendChild(this);
         return "red";
     } else {
