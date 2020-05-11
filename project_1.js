@@ -42,6 +42,7 @@ d3.csv('starbucks.csv').then(function(data){
 		d.Lat = +d.Lat; 
 		d.Long = +d.Long; 
 		d.CityState = d.CityState;
+		d.Mopened = +d.Mopened; 
 	});
 	
 	starbucks = data; 
@@ -102,31 +103,30 @@ function doSomething(){
 		});
 
 	function update(value){
-		document.getElementById("range")
-		.innerHTML=months[value];
+		document.getElementById("range").innerHTML=months[value];
 		inputVal = months[value];
-		d3.selectAll("incident")
+		d3.selectAll(".incident")
 		.attr("fill", dateMatch);
 	}
-function dateMatch(data, value){
-	var d = new Date(data.Opened);
-	var m = months[d.getMonth()];
-	if(inputVal ==m ){
-		this.parentElement.appendChild(this);
-		return "red"; 
-	} else {
-		return "#999";
-	};
+
+	function dateMatch(data, value){
+		var d = new Date(data.Mopened);
+		var m = months[d.getMonth()];
+		if(inputVal == m){
+			this.parentElement.appendChild(this);
+			return "red"; 
+		} else {
+			return "#999";
+		};
 }
+
 function initialDate(d,i){
-	var d = new Date(d.Opened);
+	var d = new Date(d.Mopened);
 	var m = months[d.getMonth()];
-	if (m == "1/1990")
-	{
+	if (m == "1/1990"){
 		this.parentElement.appendChild(this);
 		return "red";
-	}
-	else{
+	} else {
 		return "#999";
 	};
 }
