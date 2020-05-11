@@ -11,10 +11,6 @@
 
 	<title> Anna Camille - Starbucks Time Series</title> 
 
-	<div id ="sliderContainer">
-		<input id="timeslide" type="range" min="0" max="362" value="0" step="1"/><br>
-		<span id="range">1/1990</span>
-	</div>
 
 	<style>
 		path {
@@ -22,18 +18,11 @@
     		stroke-width: 1px;
     		fill: slategray;
 		}
-		.circles {
-			stroke: yellow;
-			stroke-width:0.5px;
-			fill:steelblue;
-		}
+	
 		.hover {
    		 fill: yellow;   
 		}
-		.incident{
-			stroke:yellow;
-			fill:steelblue;
-		}
+
 
 		#sliderContainer {
 			position: relative;
@@ -70,6 +59,10 @@
 <body>
 	<h1> Time Series of Starbucks in the United States </h1>
 	<h2></h2>
+	<div id ="sliderContainer">
+		<input id="timeslide" type="range" min="0" max="362" value="0" step="1"/><br>
+		<span id="range">1/1990</span>
+	</div>
 	<script type="text/javascript" src="project_1.js"></script>
 </body>
 		
